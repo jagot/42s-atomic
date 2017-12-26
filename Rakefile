@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'yaml'
 
-PROGRAMS = ["lelev", "lconst", "omegau"]
+PROGRAMS = ["lelev", "lconst", "omegau", "atomip"]
 RAWS = PROGRAMS.map { |p| "build/raw/#{p}.raw" }
 puts RAWS
 
@@ -15,6 +15,7 @@ rule ".raw" => [->(f){gen_source_for_raw(f)}, "build"] do |task|
 end
 
 rule ".raw" => [->(f){source_for_raw(f)}, "build"] do |task|
+  puts "Building #{task.name}"
   mkdir_p task.name.pathmap("%d")
   `./txt2raw.pl #{task.source} #{task.name}`
 end

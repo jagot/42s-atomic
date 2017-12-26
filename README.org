@@ -25,6 +25,8 @@ useful in Atomic Physics and Ultrafast Optics.
                 angular frequency ω = 2πc₀/λ, storing the result in
                 atomic units in the variable =OMEGAU= and in
                 electronvolts in =OMEGAEV=.
+  * =ATOMIP= :: Given an atomic number Z, store the ionization
+                potential (in atomic units) in the variable =ATOMIP=.
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.
