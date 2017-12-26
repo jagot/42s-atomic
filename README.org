@@ -17,10 +17,10 @@ useful in Atomic Physics and Ultrafast Optics.
   Vini Matangrano is used.
 
 * Routines
-  * =LELEV= :: Load [[file:./eVs.txt][first ionization energies]] (in eV) into a matrix
+  * =LELEV= :: Load [[file:./data/eVs.txt][first ionization energies]] (in eV) into a matrix
                named =ELEV=. (Data source: [[https://www.nist.gov/pml/atomic-spectra-database][NIST]])
   * =LCONST= :: Load constants useful for atomic units, etc. See
-                [[file:./constants.yaml][constants.yaml]] for which constants are defined.
+                [[file:./data/constants.yaml][constants.yaml]] for which constants are defined.
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.

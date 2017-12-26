@@ -14,7 +14,7 @@ rule ".raw" => [->(f){source_for_raw(f)}, "build"] do |task|
   `./txt2raw.pl #{task.source} #{task.name}`
 end
 
-task "build/hp42s/lelev.hp42s" => "eVs.txt" do |task|
+task "build/hp42s/lelev.hp42s" => "data/eVs.txt" do |task|
   mkdir_p task.name.pathmap("%d")
   lines = File.open(task.source).each_line
   File.open(task.name, "w") do |file|
@@ -35,7 +35,7 @@ task "build/hp42s/lelev.hp42s" => "eVs.txt" do |task|
   end
 end
 
-task "build/hp42s/lconst.hp42s" => "constants.yaml" do |task|
+task "build/hp42s/lconst.hp42s" => "data/constants.yaml" do |task|
   mkdir_p task.name.pathmap("%d")
   constants = File.open(task.source) do |file|
     YAML.load(file.read)
