@@ -26,10 +26,18 @@ useful in Atomic Physics and Ultrafast Optics.
                 atomic units in the variable =OMEGAU= and in
                 electronvolts in =OMEGAEV=.
   * =ATOMIP= :: Given an atomic number Z, store the ionization
-                potential (in atomic units) in the variable =ATOMIP=.
+                potential Iₚ (in atomic units) in the variable
+                =ATOMIP=.
   * =UP= :: Calculate the [[https://en.wikipedia.org/wiki/Ponderomotive_energy][ponderomotive potential]] Uₚ = I/4ω² from the
             field intensity I and the angular frequency ω (all in
             atomic units; uses the subroutine =OMEGAU=).
+  * =HHGCUT= :: Calculate the classical [[https://en.wikipedia.org/wiki/High_harmonic_generation#Semi-classical_approach][cut-off in HHG]], Wₖ₋ₘₐₓ =
+                3.17Uₚ + Iₚ given an intensity, a wavelength and an
+                atomic number, and store the result as
+    * =CUTOFF= :: atomic units,
+    * =CUTOEV= :: electronvolts,
+    * =CUTOFQ= :: harmonic orders (i.e. Wₖ₋ₘₐₓ/ω).
+    (uses the subroutines =ATOMIP= and =UP=).
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.

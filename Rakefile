@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'yaml'
 
-PROGRAMS = ["lelev", "lconst", "omegau", "atomip", "up"]
+PROGRAMS = ["lelev", "lconst", "omegau", "atomip", "up", "hhgcut"]
 RAWS = PROGRAMS.map { |p| "build/raw/#{p}.raw" }
 puts RAWS
 
