@@ -21,6 +21,10 @@ useful in Atomic Physics and Ultrafast Optics.
                named =ELEV=. (Data source: [[https://www.nist.gov/pml/atomic-spectra-database][NIST]])
   * =LCONST= :: Load constants useful for atomic units, etc. See
                 [[file:./data/constants.yaml][constants.yaml]] for which constants are defined.
+  * =OMEGAU= :: Given a wavelength λ in SI units, calculate the
+                angular frequency ω = 2πc₀/λ, storing the result in
+                atomic units in the variable =OMEGAU= and in
+                electronvolts in =OMEGAEV=.
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.

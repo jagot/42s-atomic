@@ -1,13 +1,18 @@
 # coding: utf-8
 require 'yaml'
 
-PROGRAMS = ["lelev", "lconst"]
+PROGRAMS = ["lelev", "lconst", "omegau"]
 RAWS = PROGRAMS.map { |p| "build/raw/#{p}.raw" }
 puts RAWS
 
 task :default => RAWS
 
 directory "build"
+
+rule ".raw" => [->(f){gen_source_for_raw(f)}, "build"] do |task|
+  mkdir_p task.name.pathmap("%d")
+  `./txt2raw.pl #{task.source} #{task.name}`
+end
 
 rule ".raw" => [->(f){source_for_raw(f)}, "build"] do |task|
   mkdir_p task.name.pathmap("%d")
@@ -55,8 +60,12 @@ task "build/hp42s/lconst.hp42s" => "data/constants.yaml" do |task|
   end
 end
 
-def source_for_raw(raw_file)
+def gen_source_for_raw(raw_file)
   raw_file.pathmap("%{^build/raw/,build/hp42s/}X.hp42s")
+end
+
+def source_for_raw(raw_file)
+  raw_file.pathmap("%{^build/raw/,src/}X.hp42s")
 end
 
 def save_stack_regs(file)
