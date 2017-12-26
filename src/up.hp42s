@@ -1,0 +1,19 @@
+LBL "UP"
+CF 21
+SF 0
+XEQ "OMEGAU"
+RCL "OMEGAU"
+X^2
+4
+x
+INPUT "INTENS"
+RCL/ "I0"
+X<>Y
+/
+STO "UP"
+FC? 1
+SF 21
+VIEW "UP"
+CF 0
+RTN
+GTO "UP"

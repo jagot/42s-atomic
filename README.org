@@ -27,6 +27,9 @@ useful in Atomic Physics and Ultrafast Optics.
                 electronvolts in =OMEGAEV=.
   * =ATOMIP= :: Given an atomic number Z, store the ionization
                 potential (in atomic units) in the variable =ATOMIP=.
+  * =UP= :: Calculate the [[https://en.wikipedia.org/wiki/Ponderomotive_energy][ponderomotive potential]] Uₚ = I/4ω² from the
+            field intensity I and the angular frequency ω (all in
+            atomic units; uses the subroutine =OMEGAU=).
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.
