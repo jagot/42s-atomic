@@ -41,6 +41,11 @@ useful in Atomic Physics and Ultrafast Optics.
     * =CUTOEV= :: electronvolts,
     * =CUTOFQ= :: harmonic orders (i.e. Wₖ₋ₘₐₓ/ω).
     (uses the subroutines =ATOMIP= and =UP=).
+  * =HHGEXC= :: Calculate the typical excursion of an electron in HHG,
+                given by <x> = E/ω², where the electric field
+                amplitude E = √I. The result is stored in the
+                variables =EXCAU= and =EXCSI= in Bohr radii and
+                metres, respectively (uses the subroutine =UP=).
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.
