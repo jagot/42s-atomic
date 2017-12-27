@@ -1,4 +1,7 @@
 LBL "UP"
+INPUT "INTENS"
+RCL/ "I0"
+STO "IAU"
 CF 21
 SF 0
 XEQ "OMEGAU"
@@ -6,10 +9,9 @@ RCL "OMEGAU"
 X^2
 4
 x
-INPUT "INTENS"
-RCL/ "I0"
-X<>Y
-/
+STO 0
+RCL "IAU"
+RCL/ 0
 STO "UP"
 FC? 1
 SF 21
