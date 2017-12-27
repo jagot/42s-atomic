@@ -3,11 +3,15 @@ require 'yaml'
 
 PROGRAMS = ["lelev", "lconst", "omegau", "atomip", "up", "hhgcut"]
 RAWS = PROGRAMS.map { |p| "build/raw/#{p}.raw" }
-puts RAWS
+BUNDLE = "build/42s-atomic.raw"
 
-task :default => RAWS
+task :default => BUNDLE
 
 directory "build"
+
+task BUNDLE => RAWS do |task|
+  `cat #{task.sources.join ' '} > #{task.name}`
+end
 
 rule ".raw" => [->(f){gen_source_for_raw(f)}, "build"] do |task|
   mkdir_p task.name.pathmap("%d")

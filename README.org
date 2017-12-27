@@ -11,7 +11,10 @@ useful in Atomic Physics and Ultrafast Optics.
     rake
   #+END_SRC
   in a command line near you. Requires [[http://ruby-lang.org][Ruby]] and [[https://www.perl.org][Perl]] to work. The
-  =raw= files are created in the subfolder =build/raw/=.
+  =raw= files are created in the subfolder =build/raw/=. For
+  convenience, they are all concatenated together into a bundled =raw=
+  file called =build/42s-atomic.raw=, which, when loaded, imports all
+  the routines in one fell swoop.
 
   To translate from text format to =raw= files, the [[file:./txt2raw.pl][txt2raw.pl]] by
   Vini Matangrano is used.
