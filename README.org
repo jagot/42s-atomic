@@ -20,32 +20,35 @@ useful in Atomic Physics and Ultrafast Optics.
   Vini Matangrano is used.
 
 * Routines
-  * =LELEV= :: Load [[file:./data/eVs.txt][first ionization energies]] (in eV) into a matrix
+  - =LELEV= :: Load [[file:./data/eVs.txt][first ionization energies]] (in eV) into a matrix
                named =ELEV=. (Data source: [[https://www.nist.gov/pml/atomic-spectra-database][NIST]])
-  * =LCONST= :: Load constants useful for atomic units, etc. See
+  - =LCONST= :: Load constants useful for atomic units, etc. See
                 [[file:./data/constants.yaml][constants.yaml]] for which constants are defined.
-  * =OMEGAU= :: Given a wavelength λ in SI units, calculate the
+  - =OMEGAU= :: Given a wavelength λ in SI units, calculate the
                 angular frequency ω = 2πc₀/λ, storing the result in
                 atomic units in the variable =OMEGAU= and in
                 electronvolts in =OMEGAEV=.
-  * =ATOMIP= :: Given an atomic number Z, store the ionization
+  - =ATOMIP= :: Given an atomic number Z, store the ionization
                 potential Iₚ (in atomic units) in the variable
                 =ATOMIP=.
-  * =UP= :: Calculate the [[https://en.wikipedia.org/wiki/Ponderomotive_energy][ponderomotive potential]] Uₚ = I/4ω² from the
+  - =UP= :: Calculate the [[https://en.wikipedia.org/wiki/Ponderomotive_energy][ponderomotive potential]] Uₚ = I/4ω² from the
             field intensity I and the angular frequency ω (all in
             atomic units; uses the subroutine =OMEGAU=).
-  * =HHGCUT= :: Calculate the classical [[https://en.wikipedia.org/wiki/High_harmonic_generation#Semi-classical_approach][cut-off in HHG]], Wₖ₋ₘₐₓ =
+  - =HHGCUT= :: Calculate the classical [[https://en.wikipedia.org/wiki/High_harmonic_generation#Semi-classical_approach][cut-off in HHG]], Wₖ₋ₘₐₓ =
                 3.17Uₚ + Iₚ given an intensity, a wavelength and an
                 atomic number, and store the result as
     * =CUTOFF= :: atomic units,
     * =CUTOEV= :: electronvolts,
     * =CUTOFQ= :: harmonic orders (i.e. Wₖ₋ₘₐₓ/ω).
     (uses the subroutines =ATOMIP= and =UP=).
-  * =HHGEXC= :: Calculate the typical excursion of an electron in HHG,
+  - =HHGEXC= :: Calculate the typical excursion of an electron in HHG,
                 given by <x> = E/ω², where the electric field
                 amplitude E = √I. The result is stored in the
                 variables =EXCAU= and =EXCSI= in Bohr radii and
                 metres, respectively (uses the subroutine =UP=).
+  - =KELDYSH= :: Calculate the [[https://en.wikipedia.org/wiki/Tunnel_ionization#Analytical_formula_for_the_rate_of_MPI][Keldysh parameter]] γ = √(Iₚ/2Uₚ) and
+                 stores the result in the variable =GAMMA= (uses the
+                 subroutines =ATOMIP= and =UP=).
 * Caveats
   These routines are only tested using [[http://thomasokken.com/free42/][Free42]], as I don't own a real
   HP42s device.

@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'yaml'
 
-PROGRAMS = ["lelev", "lconst", "omegau", "atomip", "up", "hhgcut", "hhgexc"]
+PROGRAMS = ["lelev", "lconst", "omegau", "atomip", "up", "hhgcut", "hhgexc", "keldysh"]
 RAWS = PROGRAMS.map { |p| "build/raw/#{p}.raw" }
 BUNDLE = "build/42s-atomic.raw"
 
